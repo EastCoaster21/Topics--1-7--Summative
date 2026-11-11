@@ -4,33 +4,53 @@
     {
         static void Main(string[] args)
         {
+            Random random = new Random();
+            int money = 100;
+            int wins = 0;
+            int losses = 0;
+            int ties = 0;
             int rock = 1;
             int paper = 2;
             int scissors = 3;
-            Console.WriteLine("Welcome to Rock, Paper, Scissors.");
-            Console.WriteLine("Press Enter To Continue");
-            Console.ReadLine();
-            Console.Clear();
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
             int choice;
-            choice = Convert.ToInt32(Console.ReadLine());
-            Console.Clear();
-            if (choice == 1)
+            bool playing = true;
+            while (playing && money > 0)
             {
+                string choiceInput = Console.ReadLine();
+                Console.WriteLine("===================================");
+                Console.WriteLine("Welcome to Rock, Paper, Scissors.");
+                Console.WriteLine("===================================");
                 Console.WriteLine();
-            }
-            else if (choice == 2)
-            {
-                Console.WriteLine();
-            }
-            else if (choice == 3)
-            {
-                Console.WriteLine();
+                Console.WriteLine("Starting money: $100");
                 Console.WriteLine("Press Enter To Continue");
                 Console.ReadLine();
                 Console.Clear();
+                Console.WriteLine("Your money: $" + money);
+                Console.WriteLine();
+                Console.WriteLine("1. Rock");
+                Console.WriteLine("2. Paper");
+                Console.WriteLine("3. Scissors");
+                Console.WriteLine("4. Quit");
+                Console.WriteLine();
+                Console.Write("Choose an option: ");
+                if (!int.TryParse(choiceInput, out choice))
+                {
+                    Console.WriteLine("Invalid input. Please enter a number.");
+                    continue;
+                }
+                if (choice == 4)
+                {
+                    playing = false;
+                    break;
+                }
+                if (choice < 1 || choice > 3)
+                {
+                    Console.WriteLine("Please choose 1, 2, 3, or 4.");
+                    continue;
+                }
+                Console.Write("How much would you like to bet? ");
+                //choice = Convert.ToInt32(Console.ReadLine());
+                //Console.Clear();
             }
         }
     }
