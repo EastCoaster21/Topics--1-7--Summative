@@ -6,9 +6,9 @@
         {
             Random random = new Random();
             int money = 100;
-            //int wins = 0;
-            //int losses = 0;
-            //int ties = 0;
+            int wins = 0;
+            int losses = 0;
+            int ties = 0;
             //int rock = 1;
             //int paper = 2;
             //int scissors = 3;
@@ -33,6 +33,8 @@
                 Console.WriteLine();
                 Console.Write("Choose an option: ");
                 string choiceInput = Console.ReadLine();
+                Console.Clear();
+                Console.WriteLine("Your Money: $" + money);
                 if (!int.TryParse(choiceInput, out choice))
                 {
                     Console.WriteLine("Invalid input. Please enter a number.");
@@ -93,12 +95,64 @@
                     Console.WriteLine("Computer chose Scissors.");
                 }
                 Console.WriteLine();
-                if (choice == computerChoice) 
+                if (choice == computerChoice)
                 {
                     Console.WriteLine("Woah! It's a Tie!");
                     Console.WriteLine();
                     Console.WriteLine("Your bet was refunded.");
+                    ties++;
                 }
+                else if ((choice == 1 && computerChoice == 3)||(choice == 2 && computerChoice == 1)||(choice == 3 && computerChoice == 2))
+                {
+                    Console.WriteLine("Congrats! You won!");
+                    money = money + bet;
+                    wins++;
+                }
+                else
+                {
+                    Console.WriteLine("Sorry, pal. You got beat.");
+                    Console.WriteLine();
+                    Console.WriteLine("You lost $" + bet + ".");
+                    money = money - bet;
+                    losses++;
+                }
+                Console.WriteLine("=======================");
+                Console.WriteLine("STATISTICS:");
+                Console.WriteLine("Money remaining: $" + money);
+                Console.WriteLine("Wins: " + wins);
+                Console.WriteLine("Losses: " + losses);
+                Console.WriteLine("Ties: " + ties);
+                Console.WriteLine("=======================");
+
+                if (money == 0) 
+                {
+                    Console.WriteLine("You ran out of money.");
+                    Console.WriteLine();
+                    Console.WriteLine("Get out of my casino.");
+                    playing = false;
+                }
+            }
+            Console.WriteLine("=======================");
+            Console.WriteLine("Please Come Again.");
+            Console.WriteLine("=======================");
+            Console.WriteLine("You Finished With:");
+            Console.WriteLine("Final Money: $" + money);
+            Console.WriteLine("Final Wins: " + wins);
+            Console.WriteLine("Final Losses: " + losses);
+            Console.WriteLine("Final Ties: " + ties);
+            Console.WriteLine("=======================");
+            Console.WriteLine();
+            if (money > 100)
+            {
+                Console.WriteLine("Lucky! You made a profit!");
+            }
+            else if (money < 100)
+            {
+                Console.WriteLine("You lost money. :(");
+            }
+            else if (money == 100) 
+            {
+                Console.WriteLine("You broke even. Cool.");
             }
         }
     }
