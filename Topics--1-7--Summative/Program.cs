@@ -19,13 +19,11 @@
                 Console.WriteLine("=================================");
                 Console.WriteLine("Welcome to Rock, Paper, Scissors.");
                 Console.WriteLine("=================================");
-                Console.WriteLine();
-                Console.WriteLine("Starting money: $100");
                 Console.WriteLine("Press Enter To Continue");
                 Console.ReadLine();
                 Console.Clear();
-                Console.WriteLine("Your money: $" + money);
-                Console.WriteLine();
+                //Console.WriteLine("Your money: $" + money);
+                //Console.WriteLine();
                 Console.WriteLine("1. Rock");
                 Console.WriteLine("2. Paper");
                 Console.WriteLine("3. Scissors");
@@ -66,33 +64,39 @@
                 if (bet > money) 
                 {
                     Console.WriteLine("You don't have that much.");
-                    continue;
+                    return;
                 }
                 int computerChoice = random.Next(1, 4);
                 Console.WriteLine();
                 if (choice == 1)
                 {
                     Console.WriteLine("You chose Rock!");
+                    Console.WriteLine("    _______\r\n---'   ____)\r\n      (_____)\r\n      (_____)\r\n      (____)\r\n---.__(___)");
                 }
                 else if (choice == 2)
                 {
                     Console.WriteLine("You chose Paper");
+                    Console.WriteLine("    _______\r\n---'   ____)______\r\n          ________)\r\n          _________)\r\n         _________)\r\n---.____________)");
                 }
                 else
                 {
                     Console.WriteLine("You chose Scissors");
+                    Console.WriteLine("    _______\r\n---'   ____)_____\r\n          _______)\r\n       ___________)\r\n      (____)\r\n---.__(___)");
                 }
                 if (computerChoice == 1)
                 {
                     Console.WriteLine("Computer chose Rock.");
+                    Console.WriteLine("    _______\r\n---'   ____)\r\n      (_____)\r\n      (_____)\r\n      (____)\r\n---.__(___)");
                 }
                 else if (computerChoice == 2)
                 {
                     Console.WriteLine("Computer chose Paper!");
+                    Console.WriteLine("    _______\r\n---'   ____)______\r\n          ________)\r\n          _________)\r\n         _________)\r\n---.____________)");
                 }
                 else
                 {
                     Console.WriteLine("Computer chose Scissors.");
+                    Console.WriteLine("    _______\r\n---'   ____)_____\r\n          _______)\r\n       ___________)\r\n      (____)\r\n---.__(___)");
                 }
                 Console.WriteLine();
                 if (choice == computerChoice)
@@ -101,12 +105,18 @@
                     Console.WriteLine();
                     Console.WriteLine("Your bet was refunded.");
                     ties++;
+                    Console.WriteLine("PRESS ENTER TO CONTINUE");
+                    Console.ReadLine();
+                    Console.Clear();
                 }
                 else if ((choice == 1 && computerChoice == 3)||(choice == 2 && computerChoice == 1)||(choice == 3 && computerChoice == 2))
                 {
                     Console.WriteLine("Congrats! You won!");
                     money = money + bet;
                     wins++;
+                    Console.WriteLine("PRESS ENTER TO CONTINUE");
+                    Console.ReadLine();
+                    Console.Clear();
                 }
                 else
                 {
@@ -115,6 +125,10 @@
                     Console.WriteLine("You lost $" + bet + ".");
                     money = money - bet;
                     losses++;
+                    Console.WriteLine();
+                    Console.WriteLine("PRESS ENTER TO CONTINUE");
+                    Console.ReadLine();
+                    Console.Clear();
                 }
                 Console.WriteLine("=======================");
                 Console.WriteLine("STATISTICS:");
