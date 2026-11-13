@@ -12,6 +12,7 @@
             //int rock = 1;
             //int paper = 2;
             //int scissors = 3;
+            string numchoice;
             int choice;
             bool playing = true;
             while (playing && money > 0)
@@ -64,7 +65,7 @@
                 if (bet > money) 
                 {
                     Console.WriteLine("You don't have that much.");
-                    return;
+                    continue;
                 }
                 int computerChoice = random.Next(1, 4);
                 Console.WriteLine();
@@ -130,13 +131,17 @@
                     Console.ReadLine();
                     Console.Clear();
                 }
-                Console.WriteLine("=======================");
-                Console.WriteLine("STATISTICS:");
-                Console.WriteLine("Money remaining: $" + money);
-                Console.WriteLine("Wins: " + wins);
-                Console.WriteLine("Losses: " + losses);
-                Console.WriteLine("Ties: " + ties);
-                Console.WriteLine("=======================");
+                if (playing)
+                {
+                    Console.WriteLine("=======================");
+                    Console.WriteLine("STATISTICS:");
+                    Console.WriteLine("Money remaining: $" + money);
+                    Console.WriteLine("Wins: " + wins);
+                    Console.WriteLine("Losses: " + losses);
+                    Console.WriteLine("Ties: " + ties);
+                    Console.WriteLine("=======================");
+                }
+                
 
                 if (money == 0) 
                 {
@@ -146,6 +151,7 @@
                     playing = false;
                 }
             }
+
             Console.WriteLine("=======================");
             Console.WriteLine("Please Come Again.");
             Console.WriteLine("=======================");
