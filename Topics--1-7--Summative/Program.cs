@@ -35,21 +35,21 @@
                 Console.Clear();
                 Console.WriteLine("Your Money: $" + money);
                 if (!int.TryParse(choiceInput, out choice))
-                {
-                    Console.WriteLine("Invalid input. Please enter a number.");
-                    continue;
-                }
-                if (choice == 4)
-                {
-                    playing = false;
-                    break;
-                }
-                if (choice < 1 || choice > 3)
-                {
-                    Console.WriteLine("Please choose 1, 2, 3, or 4.");
-                    continue;
-                }
-                Console.Write("How much would you like to bet? ");
+                    //{
+                    //    Console.WriteLine("Invalid input. Please enter a number.");
+                    //    continue;
+                    //}
+                    //if (choice == 4)
+                    //{
+                    //    playing = false;
+                    //    break;
+                    //}
+                    //    if (choice < 1 || choice > 3)
+                    //{
+                    //    Console.WriteLine("Please choose 1, 2, 3, or 4.");
+                    //    continue;
+                    //}
+                    Console.Write("How much would you like to bet? ");
                 string betInput = Console.ReadLine();
                 int bet;
                 if (!int.TryParse(betInput, out bet)) 
@@ -69,20 +69,25 @@
                 }
                 int computerChoice = random.Next(1, 4);
                 Console.WriteLine();
-                if (choice == 1)
+                if (choiceInput == "1"||choiceInput.ToUpper() == "ROCK")
                 {
                     Console.WriteLine("You chose Rock!");
                     Console.WriteLine("    _______\r\n---'   ____)\r\n      (_____)\r\n      (_____)\r\n      (____)\r\n---.__(___)");
                 }
-                else if (choice == 2)
+                else if (choiceInput == "2" || choiceInput.ToUpper() == "PAPER")
                 {
                     Console.WriteLine("You chose Paper");
                     Console.WriteLine("    _______\r\n---'   ____)______\r\n          ________)\r\n          _________)\r\n         _________)\r\n---.____________)");
                 }
-                else
+                else if (choiceInput == "3" || choiceInput.ToUpper() == "SCISSORS")
                 {
                     Console.WriteLine("You chose Scissors");
                     Console.WriteLine("    _______\r\n---'   ____)_____\r\n          _______)\r\n       ___________)\r\n      (____)\r\n---.__(___)");
+                }
+                else if (choiceInput == "4" || choiceInput.ToUpper() == "QUIT")
+                {
+                    playing = false;
+                    break;
                 }
                 if (computerChoice == 1)
                 {
