@@ -105,7 +105,7 @@
                     Console.WriteLine("    _______\r\n---'   ____)_____\r\n          _______)\r\n       ___________)\r\n      (____)\r\n---.__(___)");
                 }
                 Console.WriteLine();
-                if (choice == computerChoice)
+                if (choiceInput == computerChoice)
                 {
                     Console.WriteLine("Woah! It's a Tie!");
                     Console.WriteLine();
@@ -115,7 +115,7 @@
                     Console.ReadLine();
                     Console.Clear();
                 }
-                else if ((choice == 1 && computerChoice == 3)||(choice == 2 && computerChoice == 1)||(choice == 3 && computerChoice == 2))
+                else if ((choiceInput == "1" && computerChoice == 3)||(choiceInput == "2" && computerChoice == 1)||(choiceInput == "3" && computerChoice == 2))
                 {
                     Console.WriteLine("Congrats! You won!");
                     money = money + bet;
