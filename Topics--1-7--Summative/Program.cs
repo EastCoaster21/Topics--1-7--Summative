@@ -49,11 +49,11 @@
                 //    Console.WriteLine("Please choose 1, 2, 3, or 4.");
                 //    continue;
                 //}
-                else
-                {
-                    Console.WriteLine("Invalid Choice");
-                    continue;
-                }
+                //else
+                //{
+                //    Console.WriteLine("Invalid Choice");
+                //    continue;
+                //}
                 Console.Write("How much would you like to bet? ");
                 string betInput = Console.ReadLine();
                 int bet;
@@ -92,8 +92,13 @@
                     Console.WriteLine("You chose Scissors");
                     Console.WriteLine("    _______\r\n---'   ____)_____\r\n          _______)\r\n       ___________)\r\n      (____)\r\n---.__(___)");
                 }
+                else 
+                {
+                    Console.WriteLine("Invalid Choice");
+                    continue;
+                }
 
-                if (computerChoice == 1)
+            if (computerChoice == 1)
                 {
                     computerString = "ROCK";
                     Console.WriteLine("Computer chose Rock.");
