@@ -44,11 +44,16 @@
                     playing = false;
                     break;
                 }
-                //if (choice < 1 || choice > 3)
+                //if (choiceInput != "1" || choiceInput != "2" || choiceInput != "3" || choiceInput != "4" || choiceInput != "ROCK" || choiceInput != "PAPER" || choiceInput != "SCISSORS" || choiceInput != "QUIT")
                 //{
                 //    Console.WriteLine("Please choose 1, 2, 3, or 4.");
                 //    continue;
                 //}
+                else
+                {
+                    Console.WriteLine("Invalid Choice");
+                    continue;
+                }
                 Console.Write("How much would you like to bet? ");
                 string betInput = Console.ReadLine();
                 int bet;
@@ -87,11 +92,6 @@
                     Console.WriteLine("You chose Scissors");
                     Console.WriteLine("    _______\r\n---'   ____)_____\r\n          _______)\r\n       ___________)\r\n      (____)\r\n---.__(___)");
                 }
-                else
-                {
-                    Console.WriteLine("Invalid Choice");
-                    continue;
-                }
 
                 if (computerChoice == 1)
                 {
@@ -112,32 +112,7 @@
                     Console.WriteLine("    _______\r\n---'   ____)_____\r\n          _______)\r\n       ___________)\r\n      (____)\r\n---.__(___)");
                 }
                 Console.WriteLine();
-                //if (computerChoice == 1)
-                //{
-                //    computerString = "ROCK";
-                //}
-                //else if (computerChoice == 2)
-                //{
-                //    computerString = "PAPER";
-                //}
-                //else
-                //{
-                //    computerString = "SCISSORS";
-                //}
-
-                //if (choiceInput == "1")
-                //{
-                //    choiceInput = "ROCK";
-                //}
-                //else if (choiceInput == "2")
-                //{
-                //    choiceInput = "PAPER";
-                //}
-                //else
-                //{
-                //    choiceInput = "SCISSORS";
-
-                //}
+                
                 // Looks for a tie
                 if (choiceInput.ToUpper() == computerString)
                 {
