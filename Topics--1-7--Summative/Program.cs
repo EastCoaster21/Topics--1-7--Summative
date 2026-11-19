@@ -15,6 +15,9 @@
             string numchoice;
             int choice;
             bool playing = true;
+
+            string computerString = "";
+            string choiceInput = "";
             while (playing && money > 0)
             {
                 Console.WriteLine("=================================");
@@ -31,25 +34,26 @@
                 Console.WriteLine("4. Quit");
                 Console.WriteLine();
                 Console.Write("Choose an option: ");
-                string choiceInput = Console.ReadLine();
+                choiceInput = Console.ReadLine();
                 Console.Clear();
                 Console.WriteLine("Your Money: $" + money);
-                if (!int.TryParse(choiceInput, out choice))
-                    //{
-                    //    Console.WriteLine("Invalid input. Please enter a number.");
-                    //    continue;
-                    //}
-                    //if (choice == 4)
-                    //{
-                    //    playing = false;
-                    //    break;
-                    //}
-                    //    if (choice < 1 || choice > 3)
-                    //{
-                    //    Console.WriteLine("Please choose 1, 2, 3, or 4.");
-                    //    continue;
-                    //}
-                    Console.Write("How much would you like to bet? ");
+                //int.TryParse(choiceInput, out choice);
+                //if (!int.TryParse(choiceInput, out choice))
+                //{
+                //    Console.WriteLine("Invalid input. Please enter a number.");
+                //    continue;
+                //}
+                if (choiceInput == "4")
+                {
+                    playing = false;
+                    break;
+                }
+                if (choice < 1 || choice > 3)
+                {
+                    Console.WriteLine("Please choose 1, 2, 3, or 4.");
+                    continue;
+                }
+                Console.Write("How much would you like to bet? ");
                 string betInput = Console.ReadLine();
                 int bet;
                 if (!int.TryParse(betInput, out bet)) 
@@ -105,7 +109,34 @@
                     Console.WriteLine("    _______\r\n---'   ____)_____\r\n          _______)\r\n       ___________)\r\n      (____)\r\n---.__(___)");
                 }
                 Console.WriteLine();
-                if (choiceInput == computerChoice)
+                //if (computerChoice == 1)
+                //{
+                //    computerString = "ROCK";
+                //}
+                //else if (computerChoice == 2)
+                //{
+                //    computerString = "PAPER";
+                //}
+                //else
+                //{
+                //    computerString = "SCISSORS";
+                //}
+
+                //if (choiceInput == "1")
+                //{
+                //    choiceInput = "ROCK";
+                //}
+                //else if (choiceInput == "2")
+                //{
+                //    choiceInput = "PAPER";
+                //}
+                //else
+                //{
+                //    choiceInput = "SCISSORS";
+
+                //}
+
+                if (choiceInput.ToUpper() == computerString)
                 {
                     Console.WriteLine("Woah! It's a Tie!");
                     Console.WriteLine();
@@ -115,7 +146,7 @@
                     Console.ReadLine();
                     Console.Clear();
                 }
-                else if ((choiceInput == "1" && computerChoice == 3)||(choiceInput == "2" && computerChoice == 1)||(choiceInput == "3" && computerChoice == 2))
+                else if ((choiceInput == "1" && computerChoice == 3) || (choiceInput == "2" && computerChoice == 1) || (choiceInput == "3" && computerChoice == 2))
                 {
                     Console.WriteLine("Congrats! You won!");
                     money = money + bet;
