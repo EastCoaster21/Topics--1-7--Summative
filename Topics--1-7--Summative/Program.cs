@@ -39,21 +39,24 @@
                 Console.Clear();
                 Console.WriteLine("Your Money: $" + money);
                
-                if (choiceInput == "4")
+                if (choiceInput == "4"||choiceInput.ToUpper() == "QUIT")
                 {
                     playing = false;
                     break;
                 }
-                //if (choiceInput != "1" || choiceInput != "2" || choiceInput != "3" || choiceInput != "4" || choiceInput != "ROCK" || choiceInput != "PAPER" || choiceInput != "SCISSORS" || choiceInput != "QUIT")
+                if (choiceInput == "1" || choiceInput == "2" || choiceInput == "3" || choiceInput.ToUpper() == "ROCK" || choiceInput.ToUpper() == "PAPER" || choiceInput.ToUpper() == "SCISSORS")
+                {
+                    
+                }
+                //else if (choiceInput=="4"||choiceInput.ToUpper()=="QUIT")
                 //{
-                //    Console.WriteLine("Please choose 1, 2, 3, or 4.");
-                //    continue;
+
                 //}
-                //else
-                //{
-                //    Console.WriteLine("Invalid Choice");
-                //    continue;
-                //}
+                else
+                {
+                    Console.WriteLine("Please choose 1, 2, 3, or 4.");
+                    continue;
+                }
                 Console.Write("How much would you like to bet? ");
                 string betInput = Console.ReadLine();
                 int bet;
