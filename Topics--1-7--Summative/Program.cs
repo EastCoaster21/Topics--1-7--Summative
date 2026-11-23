@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             Random random = new Random();
-            int money = 100;
+            double money = 100;
             int wins = 0;
             int losses = 0;
             int ties = 0;
@@ -59,8 +59,8 @@
                 }
                 Console.Write("How much would you like to bet? ");
                 string betInput = Console.ReadLine();
-                int bet;
-                if (!int.TryParse(betInput, out bet)) 
+                double bet;
+                if (!double.TryParse(betInput, out bet)) 
                 {
                     Console.WriteLine("Invalid bet.");
                     continue;
